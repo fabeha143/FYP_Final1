@@ -14,10 +14,10 @@ class Mails extends Migration
     public function up()
     {
         Schema::create('mails', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('subject');
             $table->text('message');
-            $table->foreignId('from')->constrained('users');
+            $table->foreignId('from');
             $table->string('To');
             
             $table->timestamps();

@@ -15,7 +15,7 @@ class AppPrescription extends Migration
     {
         
         Schema::create('app_prescriptions', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('pres_disease');
             $table->string('appointment_id');
             $table->string('weeks');

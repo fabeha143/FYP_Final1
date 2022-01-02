@@ -14,7 +14,7 @@ class Medicines extends Migration
     public function up()
     {
         Schema::create('medicines', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('med_name');
             $table->string('med_company');
             $table->date('med_expiry');

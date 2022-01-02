@@ -14,7 +14,7 @@ class DoseSchedule extends Migration
     public function up()
     {
         Schema::create('dose_schedules', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('pres_disease');
             $table->bigInteger('patient_id');
             $table->bigInteger('doctor_id');

@@ -14,7 +14,7 @@ class MedicinesCategories extends Migration
     public function up()
     {
         Schema::create('medicines_categories', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('med_cat_name');
             $table->string('med_cat_description');
         

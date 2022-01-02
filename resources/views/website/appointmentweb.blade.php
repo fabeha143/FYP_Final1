@@ -28,7 +28,19 @@
             class="col-lg-6 col-md-10 col-12 wow fadeInLeft"
             data-wow-delay="0.1s"
           >
-            <form action="#">
+          {{ Form::open(array('route' => '/Appointment/create' , 'method' => 'POST')) }}
+            @if(Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+            
+            @if(Session::get('fail'))
+                <div class="alert alert-success">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
+              
               <div class="appoinment-inner">
                 <div class="appoinment-title">
                   <h3>Make An Appointment</h3>
@@ -42,71 +54,47 @@
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input
-                        type="text"
-                        name="Name"
-                        placeholder="Name"
-                        required="required"
-                      />
+                    {{ Form::text('patient_name',null,array('class' => 'form-control', 'placeholder' => 'Name'))}}
+                    <span class="text-danger">@error('patient_name'){{ $message }} @enderror</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input
-                        type="email"
-                        name="Email"
-                        placeholder="Email"
-                        required="required"
-                      />
+                    {{ Form::text('phone_number',null,array('class' => 'form-control', 'placeholder' => 'Phone Number'))}}
+                    <span class="text-danger">@error('phone_number'){{ $message }} @enderror</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input
-                        type="text"
-                        name="Phone"
-                        placeholder="Phone"
-                        required="required"
-                      />
+                    {{ Form::text('patient_dob',null,array('class' => 'datepicker', 'placeholder' => 'Date Of Birth'))}}
+                    <span class="text-danger">@error('patient_dob'){{ $message }} @enderror</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <select>
-                        <option value="1" selected="selected">
-                          Depertment
-                        </option>
-                        <option value="2">Cardiology</option>
-                        <option value="3">Neurology</option>
-                        <option value="4">Dental Care</option>
-                        <option value="5">Eye Care</option>
-                      </select>
+                    {{ Form::select('department', $department,'null',['class'=> 'form-control' , 'placeholder' => 'Please Select Department' ]) }}
+                    <span class="text-danger">@error('department'){{ $message }} @enderror</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input
-                        type="text"
-                        name="doctor name"
-                        placeholder="Doctor's Name"
-                        required="required"
-                      />
+                    {{ Form::select('doctor_name', $doctorsdata,'null',['class'=> 'form-control' , 'placeholder' => 'Please Select Doctor' ]) }}
+                    <span class="text-danger">@error('doctor_name'){{ $message }} @enderror</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <input type="text" placeholder="Date" id="datepicker" />
+                    {{ Form::text('appointment_date',null,array('class' => 'datepicker', 'placeholder' => 'Appointment Date'))}}
+                    <span class="text-danger">@error('appointment_date'){{ $message }} @enderror</span>
                     </div>
                   </div>
-                  <div class="col-12">
+                  <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <textarea
-                        name="message"
-                        placeholder="Write Your Message Here..."
-                        required="required"
-                      ></textarea>
+                    {{ Form::time('appointment_time',null,array('class' => 'form-control', 'placeholder' => 'Appointment Time'))}}
+                    <span class="text-danger">@error('appointment_time'){{ $message }} @enderror</span>
                     </div>
                   </div>
+                  
                   <div class="col-12">
                     <div class="contact-btn">
                       <button type="submit" class="theme-btn">
@@ -116,9 +104,9 @@
                   </div>
                 </div>
               </div>
-            </form>
+              {{ Form::close() }}
           </div>
-
+          
           <div
             class="col-lg-6 col-md-10 col-12 wow fadeInRight"
             data-wow-delay="0.2s"

@@ -47,7 +47,7 @@ class loginController extends Controller
 
             if(Hash::check($request->password, $userinfo->password) and $userinfo->role_id == 'admin'){
                $request->session()->put('LoggedUser',$userinfo->id);
-                return redirect(route('/admin/dashboard'));
+               return redirect(route('/admin/dashboard'));
             }
             elseif(Hash::check($request->password, $userinfo->password) and $userinfo->role_id == 'doctor'){
                 $request->session()->put('LoggedUser',$userinfo->id);
@@ -67,7 +67,7 @@ class loginController extends Controller
     {
         if(session()->has('LoggedUser')){
             session()->pull('LoggedUser');
-            return redirect('/login');
+            return view('AdminPanel/login');
         }
     }
     

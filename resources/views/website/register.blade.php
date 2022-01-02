@@ -48,28 +48,30 @@
                 </p>
               </div>
               <div class="account-form">
-                <form action="#">
+                <form method="POST" action="{{ route('save') }}">
+                @if(Session::get('success'))
+                      <div class="alert alert-success">
+                          {{ Session::get('success') }}
+                      </div>
+                  @endif
+                  
+                  @if(Session::get('fail'))
+                      <div class="alert alert-success">
+                          {{ Session::get('fail') }}
+                      </div>
+                  @endif
+                @csrf
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
-                        <label>First Name *</label>
+                        <label>Name *</label>
                         <input
                           type="text"
-                          name="Name"
+                          name="name"
                           placeholder=""
-                          required="required"
+                          value="{{ old('name') }}"
                         />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <div class="form-group">
-                        <label>Last Name *</label>
-                        <input
-                          type="text"
-                          name="Name"
-                          placeholder=""
-                          required="required"
-                        />
+                        <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
@@ -77,10 +79,11 @@
                         <label>Phone No *</label>
                         <input
                           type="text"
-                          name="number"
+                          name="phone_number"
                           placeholder=""
-                          required="required"
+                          value="{{ old('phone_number') }}"
                         />
+                        <span class="text-danger">@error('phone_number'){{ $message }} @enderror</span>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
@@ -88,44 +91,24 @@
                         <label>Email Address *</label>
                         <input
                           type="Email"
-                          name="Email"
+                          name="email"
                           placeholder=""
-                          required="required"
+                          value="{{ old('email') }}"
                         />
+                        <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <div class="form-group">
-                        <label>Address Line 1 *</label>
-                        <input
-                          type="text"
-                          name="Address"
-                          placeholder=""
-                          required="required"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <div class="form-group">
-                        <label>Address Line 2</label>
-                        <input
-                          type="text"
-                          name="Name"
-                          placeholder=""
-                          required="required"
-                        />
-                      </div>
-                    </div>
+                    
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
                         <label>Password *</label>
                         <input
                           class="password"
                           type="Password"
-                          name="Password"
+                          name="password"
                           placeholder=""
-                          required="required"
                         />
+                        <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
@@ -134,25 +117,13 @@
                         <input
                           class="password"
                           type="Password"
-                          name="Password"
+                          name="password_confirmation"
                           placeholder=""
-                          required="required"
                         />
+                        <span class="text-danger">@error('password_confirmation'){{ $message }} @enderror</span>
                       </div>
                     </div>
-                    <div class="col-12 mb-3">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="agree"
-                        />
-                        <label class="form-check-label" for="agree">
-                          I agree with the <a href="#">terms & conditions.</a>
-                        </label>
-                      </div>
-                    </div>
+                    
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="bottom-content">
                         <p>

@@ -17,13 +17,14 @@ class Appointments extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('patient_name');
-            $table->string('patient_category');
+            $table->string('patient_category')->default('Out Patient');
             $table->date('patient_dob');
             $table->date('appointment_date');
             $table->time('appointment_time');
+            $table->text('phone_number');
             $table->foreignId('department')->constrained('departments');
             $table->foreignId('doctor_name')->constrained('doctors');
-            $table->string('status');
+            $table->string('status')->default('Pending');
            
         });
     }

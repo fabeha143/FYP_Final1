@@ -15,7 +15,7 @@ class Profiles extends Migration
     {
         
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->longText('posts');
             $table->bigInteger('user_id');
             $table->timestamps();

@@ -37,7 +37,7 @@
         <div class="department-details-main">
           <div class="row">
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-heartbeat"></i>
                   <h6>Cardiology</h6>
@@ -45,7 +45,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-tooth"></i>
                   <h6>Dental</h6>
@@ -53,7 +53,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-brain"></i>
                   <h6>Neurology</h6>
@@ -61,7 +61,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-capsules"></i>
                   <h6>Medicine</h6>
@@ -69,7 +69,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-eye"></i>
                   <h6>Eye Care</h6>
@@ -77,7 +77,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-stethoscope"></i>
                   <h6>Pediatrics</h6>
@@ -85,7 +85,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                 <i class="fas fa-burn"></i>
                   <h6>Urology</h6>
@@ -93,7 +93,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-lungs"></i>
                   <h6>Nephrology</h6>
@@ -101,7 +101,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-user-nurse"></i>
                   <h6>Gynecology</h6>
@@ -109,7 +109,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                     <i class="fas fa-bone"></i>
                   <h6>Rheumetology</h6>
@@ -117,7 +117,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                     <i class="fas fa-prescription-bottle"></i>
                   <h6>Surgical Oncology</h6>
@@ -125,7 +125,7 @@
               </a>
             </div>
             <div class="col-2">
-              <a href="department-single.html">
+              <a href="#">
                 <div class="department-single">
                   <i class="fas fa-syringe"></i>
                   <h6>Anaesthesia</h6>

@@ -14,7 +14,7 @@ class Employees extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('emp_fname');
             $table->string('emp_lname');
             $table->string('emp_gender');

@@ -14,7 +14,7 @@ class InpatientPrescriptions extends Migration
     public function up()
     {
         Schema::create('inpatient_prescriptions', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('pres_disease');
             $table->bigInteger('patient_id');
             $table->bigInteger('doctor_id');

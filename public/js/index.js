@@ -191,7 +191,9 @@ function getChartJs(type) {
     });
     $("select").niceSelect();
     $(function () {
-        $("#datepicker").datepicker();
+        $(".datepicker").datepicker({
+            format: 'yy/mm/dd',
+        });
     });
     $(".mobile-menu").slicknav({
         prependTo: ".mobile-nav",

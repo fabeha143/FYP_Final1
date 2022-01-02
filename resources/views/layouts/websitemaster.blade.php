@@ -1,6 +1,17 @@
+@php
+   if(session()->has('LoggedUserweb')) {
+      $layoutwebnav = 'layouts.nav_after_login';
+   } 
+   else{
+        $layoutwebnav = 'layouts.nav_before_login';
+   }
+@endphp
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
 
@@ -47,30 +58,8 @@
         <div class="loader"></div>
     </div>
 </div> -->
-    <div class="topbar-area">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-4 col-12">
-                    <ul class="top-link">
-                        <li><a href="{{ url('/loginpatient') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-8 col-12">
 
-                    <div class="topbar-content">
-                        <ul class="topbar-detail">
-                            <li><i class="fas fa-map-marker-alt"></i><span>Address:</span>PAF Kiet Pakistan</li>
-                            <li><i class="fas fa-phone"></i><span>(24/7 Helpline)</span>0300 2529850</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    @include($layoutwebnav)
     <header class="header">
         <div class="container">
             <div class="row">
@@ -97,11 +86,7 @@
                                         <li><a href="{{ url('/service') }}">Services</a>
                                         </li>
                                         
-                                        <li><a href="#">Doctors<i class="fas fa-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ url('/Doctor') }}">Doctor</a></li>
-                                                <li><a href="{{ url('/DoctorDetail') }}">Doctor Details</a></li>
-                                            </ul>
+                                        <li><a href="{{ url('/Doctor') }}">Doctors</a>
                                         </li>
                                         <li><a href="{{ url('/faq') }}">Faq</a>
                                         </li>

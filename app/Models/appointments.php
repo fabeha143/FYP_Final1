@@ -9,7 +9,7 @@ class appointments extends Model
 {
      use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['patient_name','patient_dob','appointment_date' , 'appointment_time','department','doctor_name'];
+    protected $fillable = ['patient_name','patient_dob','appointment_date' , 'appointment_time','department','doctor_name','phone_number'];
     public function doctors()
     {
         return $this->belongsTo(doctor::class, 'doctor_name', 'id');

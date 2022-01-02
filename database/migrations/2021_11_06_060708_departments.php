@@ -14,7 +14,7 @@ class Departments extends Migration
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('dep_name');
             $table->longText('dep_description');
             $table->timestamps();

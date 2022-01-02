@@ -14,7 +14,7 @@ class Doctors extends Migration
     public function up()
     {
         Schema::create('doctors', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('doc_fname');
             $table->string('doc_lname');
             $table->date('doc_date_of_birth');
